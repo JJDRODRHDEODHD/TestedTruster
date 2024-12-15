@@ -9,15 +9,15 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(135deg, #f3f4f6, #e2e8f0);
+            background: #e0e0e0;
             color: #333;
         }
         header {
-            background: linear-gradient(135deg, #4a90e2, #0078d7);
+            background: #4f4f4f;
             color: white;
             padding: 1.5rem 0;
             text-align: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
         header h1 {
             font-size: 2.5rem;
@@ -36,9 +36,11 @@
         }
         main {
             padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
         }
         .section {
-            background: white;
+            background: #f8f8f8;
             padding: 1.5rem;
             border-radius: 10px;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -58,43 +60,51 @@
         .section h2 {
             font-size: 1.8rem;
             margin-bottom: 1rem;
-            color: #0078d7;
+            color: #4f4f4f;
         }
         .section p {
-            margin: 0.5rem 0;
+            margin: 0.8rem 0;
             line-height: 1.6;
         }
+        .highlight {
+            color: #0078d7;
+            font-weight: bold;
+        }
         footer {
-            background: #4a90e2;
+            background: #4f4f4f;
             color: white;
             text-align: center;
-            padding: 1rem 0;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem 0;
+            position: relative;
+            box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.2);
         }
         .cta {
             text-align: center;
             margin-top: 2rem;
         }
         .cta button {
-            background: #0078d7;
+            background: #4f4f4f;
             color: white;
-            padding: 0.8rem 1.5rem;
+            padding: 0.8rem 2rem;
             font-size: 1rem;
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             transition: background 0.3s, transform 0.2s;
         }
         .cta button:hover {
-            background: #005bb5;
+            background: #333;
             transform: translateY(-2px);
         }
         .cta button:active {
             transform: translateY(0);
+        }
+        .tips-list {
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+        }
+        .tips-list li {
+            margin: 0.5rem 0;
         }
         .tooltip {
             color: #0078d7;
@@ -119,25 +129,46 @@
 <body>
     <header>
         <h1>TrustedTruster</h1>
+        <p>Your Guide to Safe and Secure Software Installation</p>
     </header>
     <main>
         <div class="section">
-            <h2>Can You Trust Apps from Random Sources?</h2>
-            <p><span class="tooltip" data-tooltip="Be cautious with software sources!">Hover over this text</span> to learn why unverified sources can harm your devices.</p>
-            <p>Always download software from official stores like <a href="https://www.microsoft.com/store" target="_blank">Microsoft Store</a> or <a href="https://play.google.com/store" target="_blank">Google Play</a>.</p>
+            <h2>Why You Should Trust Verified Sources</h2>
+            <p>Downloading software from untrusted sources can have <span class="highlight">serious consequences</span>, including:</p>
+            <ul class="tips-list">
+                <li>Compromising personal data such as bank details or passwords.</li>
+                <li>Installing malware, spyware, or ransomware that damages your system.</li>
+                <li>Exposing your device to unauthorized access by hackers.</li>
+            </ul>
+            <p>Stick to official stores like the <a href="https://www.microsoft.com/store" target="_blank">Microsoft Store</a> and <a href="https://play.google.com/store" target="_blank">Google Play</a>.</p>
         </div>
         <div class="section">
-            <h2>Factors to Consider</h2>
-            <p>1. <strong>Developer Authenticity:</strong> Verify the developer’s credentials and ratings on app stores.</p>
-            <p>2. <strong>App Permissions:</strong> Avoid apps that ask for unnecessary access to sensitive data.</p>
-            <p>3. <strong>User Reviews:</strong> Check both positive and negative reviews to make informed choices.</p>
+            <h2>How to Identify Untrustworthy Apps</h2>
+            <p>Before downloading an app, check for these <span class="tooltip" data-tooltip="Red flags to watch out for!">warning signs</span>:</p>
+            <ul class="tips-list">
+                <li>Permissions that don't match the app's purpose (e.g., a calculator asking for camera access).</li>
+                <li>Negative or inconsistent reviews on app stores.</li>
+                <li>Low number of downloads or no update history.</li>
+                <li>APK files from unverified websites.</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>Pro Tips for Staying Safe</h2>
+            <p>Follow these expert tips to keep your devices secure:</p>
+            <ul class="tips-list">
+                <li>Use antivirus software to regularly scan for threats.</li>
+                <li>Enable Google Play Protect for Android or Windows Defender for Windows.</li>
+                <li>Set up multi-factor authentication on your accounts for extra security.</li>
+                <li>Back up important data regularly to avoid loss during a security breach.</li>
+            </ul>
+            <p class="highlight">Remember: Always verify before you trust!</p>
         </div>
         <div class="cta">
-            <button onclick="alert('Stay informed and secure your devices!')">Learn More</button>
+            <button onclick="alert('Stay safe and download wisely!')">Learn More</button>
         </div>
     </main>
     <footer>
-        <p>&copy; 2024 TrustedTruster. Always Verify Before You Trust.</p>
+        <p>&copy; 2024 TrustedTruster. Empowering You with Knowledge and Security.</p>
     </footer>
 </body>
 </html>
