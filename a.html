@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TrustedTruster</title>
+  <meta name="description" content="TrustedTruster helps users stay protected from malware by guiding them to download only from secure, trusted sources.">
+  <style>
+    :root {
+      --primary: #0078d7;
+      --background: #f9f9f9;
+      --foreground: #1a1a1a;
+      --card-bg: #ffffff;
+      --text: #222;
+      --text-muted: #555;
+      --radius: 10px;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background-color: var(--background);
+      color: var(--text);
+      transition: background-color 0.4s ease, color 0.4s ease;
+    }
+
+    body.dark {
+      --background: #111;
+      --foreground: #f9f9f9;
+      --card-bg: #1e1e1e;
+      --text: #eee;
+      --text-muted: #aaa;
+    }
+
+    header {
+      background: var(--primary);
+      color: #fff;
+      padding: 3rem 1rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      margin: 0;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      margin-top: 0.5rem;
+    }
+
+    main {
+      max-width: 960px;
+      margin: auto;
+      padding: 2rem 1rem;
+    }
+
+    section {
+      background: var(--card-bg);
+      margin-bottom: 2rem;
+      padding: 2rem;
+      border-radius: var(--radius);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    h2 {
+      color: var(--primary);
+      margin-top: 0;
+    }
+
+    ul {
+      padding-left: 1.25rem;
+      line-height: 1.6;
+    }
+
+    .tooltip {
+      color: var(--primary);
+      cursor: help;
+      border-bottom: 1px dotted currentColor;
+      position: relative;
+    }
+
+    .tooltip:hover::after {
+      content: attr(data-tooltip);
+      position: absolute;
+      background: #333;
+      color: white;
+      padding: 0.5rem;
+      border-radius: 5px;
+      font-size: 0.85rem;
+      top: 130%;
+      left: 50%;
+      transform: translateX(-50%);
+      white-space: nowrap;
+      z-index: 99;
+    }
+
+    .feedback-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .feedback-form input,
+    .feedback-form textarea {
+      padding: 0.9rem;
+      font-size: 1rem;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      width: 100%;
+      background: var(--background);
+      color: var(--text);
+    }
+
+    .feedback-form button {
+      background: var(--primary);
+      color: white;
+      padding: 0.9rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .feedback-form button:hover {
+      background: #005fa3;
+    }
+
+    .message {
+      margin-top: 1rem;
+      font-weight: bold;
+    }
+
+    .toggle-theme {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      z-index: 1000;
+      background: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 25px;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+    }
+
+    footer {
+      background: #1a1a1a;
+      color: #ccc;
+      text-align: center;
+      padding: 2rem 1rem;
+      margin-top: 4rem;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <button class="toggle-theme" onclick="toggleTheme()" aria-label="Toggle dark/light theme">Toggle Theme</button>
+
+  <header>
+    <h1>TrustedTruster</h1>
+    <p>Empowering safer app downloads in 2025</p>
+  </header>
+
+  <main>
+    <section class="animate">
+      <h2>🛑 Why Trust Matters</h2>
+      <ul>
+        <li>Untrusted apps can steal personal data or spy on your activity.</li>
+        <li>Malware often disguises itself as legitimate software.</li>
+        <li>Always verify the source of any download.</li>
+      </ul>
+    </section>
+
+    <section class="animate">
+      <h2>🔎 Spot the Red Flags</h2>
+      <ul>
+        <li>Fake reviews or excessive <span class="tooltip" data-tooltip="Permissions like SMS, camera, or contacts for unrelated apps.">permissions</span></li>
+        <li>Requests to sideload APKs or leave the Play Store</li>
+        <li>Popups claiming system updates outside of actual settings</li>
+      </ul>
+    </section>
+
+    <section class="animate">
+      <h2>🧠 Best Practices</h2>
+      <ul>
+        <li>Only download from official sources like Google Play or Apple App Store</li>
+        <li>Use antivirus and security checkups</li>
+        <li>Check developer info, update logs, and permissions</li>
+      </ul>
+    </section>
+
+    <section class="animate">
+      <h2>📢 How to Report Suspicious Apps</h2>
+      <ul>
+        <li>Use the “Report” button in app stores</li>
+        <li>Visit the developer’s website and report if no official presence</li>
+        <li>Notify your antivirus or security app provider</li>
+      </ul>
+    </section>
+
+    <section class="animate">
+      <h2>🔍 What TrustedTruster Checks For</h2>
+      <ul>
+        <li>Download origin and URL authenticity</li>
+        <li>Developer credentials and security signatures</li>
+        <li>Scam signs like misleading app names and icons</li>
+      </ul>
+    </section>
+
+    <section class="animate">
+      <h2>👨‍💻 TrustedTruster for Developers</h2>
+      <p>We encourage honest developers to:</p>
+      <ul>
+        <li>Use verified signing certificates</li>
+        <li>Clearly explain permission needs</li>
+        <li>Submit their apps for validation and listing</li>
+      </ul>
+    </section>
+
+    <section class="animate">
+      <h2>❓ Frequently Asked Questions</h2>
+      <ul>
+        <li><strong>Is TrustedTruster an antivirus?</strong><br>No. It's an educational guide with tips and tools.</li>
+        <li><strong>Does TrustedTruster block malware?</strong><br>No, but we help you prevent downloading it.</li>
+        <li><strong>Can I use this on mobile?</strong><br>Yes! Our site is mobile-friendly and responsive.</li>
+      </ul>
+    </section>
+
+    <section class="animate">
+      <h2>💬 Feedback</h2>
+      <form class="feedback-form" onsubmit="submitFeedback(event)">
+        <input type="text" name="name" placeholder="Your Name (optional)" aria-label="Name">
+        <input type="email" name="email" placeholder="Your Email (optional)" aria-label="Email">
+        <textarea name="message" rows="4" placeholder="Tell us what you think..." aria-label="Message" required></textarea>
+        <button type="submit">Send Feedback</button>
+        <div class="message" id="formMessage"></div>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 TrustedTruster. No shortcuts to safety.
+  </footer>
+
+  <script>
+    const themeKey = "trustedTrusterTheme";
+    const savedTheme = localStorage.getItem(themeKey);
+    if (savedTheme === "dark") {
+      document.body.classList.add("dark");
+    }
+
+    function toggleTheme() {
+      document.body.classList.toggle("dark");
+      const theme = document.body.classList.contains("dark") ? "dark" : "light";
+      localStorage.setItem(themeKey, theme);
+    }
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+
+    document.querySelectorAll(".animate").forEach(section => observer.observe(section));
+
+    function submitFeedback(e) {
+      e.preventDefault();
+      const msg = document.getElementById("formMessage");
+      msg.textContent = "✅ Feedback submitted. Thank you!";
+      e.target.reset();
+    }
+  </script>
+</body>
+</html>
